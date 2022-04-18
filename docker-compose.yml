@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+
+  dev:    
+    container_name: dev
+    privileged: true
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    stop_grace_period: 1s
+    working_dir: /CaptureLife
+    volumes:
+      - ./:/CaptureLife
