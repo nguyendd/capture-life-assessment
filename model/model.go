@@ -15,8 +15,8 @@ type Blog struct {
 }
 
 type UpdateBlogInput struct {
-	Title     string    `json:"title"`
-	Content   string    `json:"content"`
+	Title   string `json:"title"`
+	Content string `json:"content"`
 }
 
 type CommentID struct {
@@ -29,4 +29,8 @@ type Comment struct {
 	Content         string     `json:"content"`
 	BlogID          *BlogID    `json:"blog_id"`
 	ParentCommentID *CommentID `json:"parent_comment_id"`
+}
+
+type UpdateCommentInput struct {
+	Content string `json:"content"`
 }
