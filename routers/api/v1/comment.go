@@ -101,6 +101,7 @@ func DeleteComment(c *gin.Context) {
 	}
 
 	allChildren := getChildren(id)
+
 	tempComments := comments[:0]
 
 	for _, comment := range comments {
@@ -110,6 +111,7 @@ func DeleteComment(c *gin.Context) {
 		skip := false
 		for _, child := range allChildren {
 			if comment.ID.Value == child.ID.Value {
+				skip = true
 				break
 			}
 		}
